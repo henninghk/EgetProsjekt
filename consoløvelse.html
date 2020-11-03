@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.red{
+            font-size: 200px;
+            color: blue;
+            background-color: red;
+            height: 300px;
+            width: 100px;
+        }
+        div.blue{background-color: seagreen;
+        }
+        p1{
+            color:seagreen;
+
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>
+        HEI KA DET GÅR I.
+    </h1>
+    <h2 id="hade" onclick="clicke()">
+        Hei på deg
+    </h2>
+    <div class="red">
+    <div class="blue">heihei
+    </div></div>
+    <h1>heihvaskjernå</h1>
+    <p1 id="endre"onclick="goddag()">
+        god dag
+    </p1>
+
+    <script>
+        function clicke(){
+            document.getElementById("endre").innerHTML = 'hade';
+        }
+        function goddag(){
+            document.getElementById("hade").innerHTML = 'hade2';
+        }
+    </script>
+    
+</body>
+</html>

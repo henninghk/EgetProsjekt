@@ -1,0 +1,670 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        body {
+            font-family: helvetica;
+        }
+
+        svg {
+            fill: white;
+        }
+
+        rect {
+            stroke: black;
+            stroke-width: 5px;
+            fill: inherit;
+        }
+
+        circle {
+            fill: black;
+        }
+
+        table, td {
+            border: black solid 1px;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 6px;
+            min-width: 120px;
+        }
+
+        .diceHeld {
+            fill: lightsteelblue;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button onclick="throwDice()">Kast terningene!</button>
+    </p>
+    
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(0)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(1)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(2)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(3)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(4)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(5)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+    <svg width="100" height="100" viewBox="0 0 140 140" onclick="toggleDice(6)">
+        <rect x="5" y="5" rx="20" ry="20" width="130" height="130" />
+        <circle cx="30" cy="30" r="13" />
+        <circle cx="110" cy="30" r="13" />
+        <circle cx="30" cy="70" r="13" />
+        <circle cx="70" cy="70" r="13" />
+        <circle cx="110" cy="70" r="13" />
+        <circle cx="30" cy="110" r="13" />
+        <circle cx="110" cy="110" r="13" />
+    </svg>
+
+    <table id="tblScoreBoard">
+        <tr>
+            <td>Navn</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultUpperSection(1)">Enere</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultUpperSection(2)">Toere</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultUpperSection(3)">Treere</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultUpperSection(4)">Firere</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultUpperSection(5)">Femere</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultUpperSection(6)">Seksere</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sum</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bonus</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultOnePair()">1 par</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultTwoPairs()">2 par</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultThreePairs()">3 par</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultThreeOfAKind()">3 like</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultFourOfAKind()">4 like</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultFiveOfAKind()">5 like</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultSixOfAKind()">6 like</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultSmallStraight()">Liten straight</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultLargeStraight()">Stor straight</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultFullStright()">FullStraight</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultHouse()">Hus</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultCabin()">Hytte</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultTower()">Tårn</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultHomeHouse()">Kåk</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultCastle()">Slott</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultChance()">Sjanse</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:placeResultKemboYatzy()">Yatzy</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Totalsum</td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <script type="text/javascript">
+        var allSvgs = document.getElementsByTagName('svg');
+        var scoreBoardView = document.getElementsByTagName('table')[0];
+        var scoreBoardModel = initScoreBoard();
+        var diceModel = initDiceModel();
+        showDice();
+        showScoreBoard();
+
+        function throwDice() {
+            if (diceModel.throwCount >= 3) return;
+            diceModel.throwCount++;
+            for (var i = 0; i < diceModel.dice.length; i++) {
+                if (!diceModel.dice[i].isHeld) {
+                    diceModel.dice[i].value = Math.floor(Math.random() * 6) + 1;
+                }
+            }
+            showDice();
+        }
+
+        function toggleDice(diceIndexo) {
+            if (diceModel.throwCount === 0) return;
+            diceModel.dice[diceIndexo].isHeld = !diceModel.dice[diceIndexo].isHeld;
+            showDice();
+        }
+
+        function initDiceModel() {
+            var diceModel = {};
+            diceModel.dice = [
+                { value: 6, isHeld: false },
+                { value: 6, isHeld: false },
+                { value: 6, isHeld: false },
+                { value: 6, isHeld: false },
+                { value: 6, isHeld: false },
+                { value: 6, isHeld: false },
+                { value: 6, isHeld: false }
+            ];
+            diceModel.throwCount = 0;
+            return diceModel;
+        }
+
+        function showDice() {
+            showOneDice(0);
+            showOneDice(1);
+            showOneDice(2);
+            showOneDice(3);
+            showOneDice(4);
+            showOneDice(5);
+            showOneDice(6);
+        }
+
+        function showOneDice(diceIndex) {
+            var svg = allSvgs[diceIndex];
+            var valueToShow = diceModel.dice[diceIndex].value;
+            var isHeld = diceModel.dice[diceIndex].isHeld;
+            svg.classList.remove('diceHeld');
+            if (isHeld) svg.classList.add('diceHeld');
+            var circles = svg.getElementsByTagName('circle');
+
+            circles[0].style.display = valueToShow > 1 ? 'block' : 'none';
+            circles[1].style.display = valueToShow > 3 ? 'block' : 'none';
+            circles[2].style.display = valueToShow === 6 ? 'block' : 'none';
+            circles[3].style.display = valueToShow % 2 === 1 ? 'block' : 'none';
+            circles[4].style.display = valueToShow === 6 ? 'block' : 'none';
+            circles[5].style.display = valueToShow > 3 ? 'block' : 'none';
+            circles[6].style.display = valueToShow > 1 ? 'block' : 'none';
+
+        }
+
+
+
+        function showScoreBoard() {
+            scoreBoardView.rows[1].cells[1].innerText = scoreBoardModel.upperSection[1];
+            scoreBoardView.rows[2].cells[1].innerText = scoreBoardModel.upperSection[2];
+            scoreBoardView.rows[3].cells[1].innerText = scoreBoardModel.upperSection[3];
+            scoreBoardView.rows[4].cells[1].innerText = scoreBoardModel.upperSection[4];
+            scoreBoardView.rows[5].cells[1].innerText = scoreBoardModel.upperSection[5];
+            scoreBoardView.rows[6].cells[1].innerText = scoreBoardModel.upperSection[6];
+            scoreBoardView.rows[7].cells[1].innerText = scoreBoardModel.getSum();
+            scoreBoardView.rows[8].cells[1].innerText = scoreBoardModel.getBonus();
+            scoreBoardView.rows[9].cells[1].innerText = scoreBoardModel.onePair;
+            scoreBoardView.rows[10].cells[1].innerText = scoreBoardModel.twoPairs;
+            scoreBoardView.rows[11].cells[1].innerText = scoreBoardModel.threePairs;
+            scoreBoardView.rows[12].cells[1].innerText = scoreBoardModel.threeOfAKind;
+            scoreBoardView.rows[13].cells[1].innerText = scoreBoardModel.fourOfAKind;
+            scoreBoardView.rows[14].cells[1].innerText = scoreBoardModel.fiveOfAKind;
+            scoreBoardView.rows[15].cells[1].innerText = scoreBoardModel.sixOfAKind;
+            scoreBoardView.rows[16].cells[1].innerText = scoreBoardModel.smallStraight;
+            scoreBoardView.rows[17].cells[1].innerText = scoreBoardModel.largeStraight;
+            scoreBoardView.rows[18].cells[1].innerText = scoreBoardModel.fullStraight;
+            scoreBoardView.rows[19].cells[1].innerText = scoreBoardModel.house;
+            scoreBoardView.rows[20].cells[1].innerText = scoreBoardModel.cabin;
+            scoreBoardView.rows[21].cells[1].innerText = scoreBoardModel.tower;
+            scoreBoardView.rows[22].cells[1].innerText = scoreBoardModel.homeHouse;
+            scoreBoardView.rows[23].cells[1].innerText = scoreBoardModel.castle;
+            scoreBoardView.rows[24].cells[1].innerText = scoreBoardModel.chance;
+            scoreBoardView.rows[25].cells[1].innerText = scoreBoardModel.kemboYatzy;
+            scoreBoardView.rows[26].cells[1].innerText = scoreBoardModel.getTotalSum();
+        }
+
+        
+        
+        function placeResultUpperSection(diceValue) {
+            if (diceModel.throwCount < 0
+                || scoreBoardModel.upperSection[diceValue] != null)
+                return;
+
+            var sum = 0;
+            for (var i = 0; i < diceModel.dice.length; i++) {
+                if (diceModel.dice[i].value === diceValue) {
+                    sum += diceValue;
+                }
+            }
+            scoreBoardModel.upperSection[diceValue] = sum;
+
+            resetDiceAndRefreshScoreboard();
+        }
+
+        function resetDiceAndRefreshScoreboard() {
+            diceModel.throwCount = 0;
+            for (var i = 0; i < diceModel.dice.length; i++) {
+                diceModel.dice[i].isHeld = false;
+            }
+            showDice();
+            showScoreBoard();
+        }//ettpar
+        function placeResultOnePair() {
+            var counts = getCounts();
+            for (var i = counts.length - 1; i >= 0; i--) {
+                if (counts[i] > 1) {
+                    var diceValue = i + 1;
+                    scoreBoardModel.onePair = diceValue * 2;
+                    resetDiceAndRefreshScoreboard();
+                    return;
+                }
+            }
+            scoreBoardModel.onePair = 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        
+        //topar
+        function placeResultTwoPairs() {
+            var counts = getCounts();
+            var pairs = [];
+            for (var i = counts.length - 1; i >= 0; i--) {
+                if (counts[i] > 1) {
+                    var diceValue = i + 1;
+                    pairs.push(diceValue * 2);
+                }
+            }
+            scoreBoardModel.twoPairs = pairs.length >= 2 ? pairs[0] + pairs[1] : 0;
+            resetDiceAndRefreshScoreboard();
+        }//3par
+        function placeResultThreePairs() {
+            var counts = getCounts();
+            var pairs = [];
+            for (var i = counts.length - 1; i >= 0; i--) {
+                if (counts[i] > 1) {
+                    var diceValue = i + 1;
+                    pairs.push(diceValue * 2);
+                }
+            }
+            scoreBoardModel.threePairs = pairs.length >= 2 ? pairs[0] + pairs[1] + pairs[2] : 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        //3like
+        function placeResultThreeOfAKind() {
+            if (diceModel.throwCount < 0
+                || scoreBoardModel.threeOfAKind != null)
+                return;
+                var counts = getCounts();
+            for (var i = 0; i < counts.length; i++) {
+                if (counts[i] >= 3) {
+                    scoreBoardModel.threeOfAKind = (i + 1) * 3;
+                    resetDiceAndRefreshScoreboard();
+                    return;
+                }
+            }
+            scoreBoardModel.threeOfAKind = 0;
+            resetDiceAndRefreshScoreboard();
+        
+        }//4like
+        
+        function placeResultFourOfAKind() {
+            if (diceModel.throwCount < 0
+                || scoreBoardModel.fourOfAKind != null)
+                return;
+                var counts = getCounts();
+            for (var i = 0; i < counts.length; i++) {
+                if (counts[i] >= 4) {
+                    scoreBoardModel.fourOfAKind = (i + 1) * 4;
+                    resetDiceAndRefreshScoreboard();
+                    return;
+                }
+            }
+            scoreBoardModel.fourOfAKind = 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        //5like
+
+        function placeResultFiveOfAKind() {
+            if (diceModel.throwCount < 0
+                || scoreBoardModel.fiveOfAKind != null)
+                return;
+                var counts = getCounts();
+            for (var i = 0; i < counts.length; i++) {
+                if (counts[i] >= 5) {
+                    scoreBoardModel.fiveOfAKind = (i + 1) * 5;
+                    resetDiceAndRefreshScoreboard();
+                    return;
+                }
+            }
+            scoreBoardModel.fiveOfAKind = 0;
+            resetDiceAndRefreshScoreboard();
+        }//sekslike
+        function placeResultSixOfAKind() {
+            if (diceModel.throwCount < 0
+                || scoreBoardModel.sixOfAKind != null)
+                return;
+                var counts = getCounts();
+            for (var i = 0; i < counts.length; i++) {
+                if (counts[i] >= 6) {
+                    scoreBoardModel.sixOfAKind= (i + 1) * 6;
+                    resetDiceAndRefreshScoreboard();
+                    return;
+                }
+            }
+            scoreBoardModel.sixOfAKind = 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        //litenstright
+        function placeResultSmallStraight() {
+    
+            var counts = getCounts();
+           
+            var countsLargerThanOne = counts.filter(
+                function (number) {return number > 1; });
+            scoreBoardModel.smallStraight =
+                countsLargerThanOne.length > 0
+                    ? 0
+                    : (counts[5] === 0 ? 15 : 0);
+                    resetDiceAndRefreshScoreboard();
+                
+        }
+//         function smallStraight(){ 
+//    var score=0; 
+//    var same = false; 
+//    dices.sort(sortNumber); 
+    
+//    var curSeqLen=1; 
+//     var lastDie=dices[0]; 
+     
+//     // if the lowest number is a 4, or the highest number is a 3, it cannot be small straight 
+//     if (dices[0] >= 4 || dices[4] <= 3) 
+//        same = false; 
+  
+//     for (i = 1; i < 5; i++) { 
+//         // the current die is one greater than the last one, the numbers are in sequence 
+//         if (dices[i] == lastDie+1){ 
+//             curSeqLen++; 
+//         } 
+//         else if (dices[i] == lastDie){} 
+//         // the consecutive dice are not in order, still might be a straight in there 
+//         else{ 
+//             curSeqLen=1; 
+//         } 
+         
+//         if (curSeqLen >=4) 
+//            same = true; 
+            
+//         lastDie = dices[i]; 
+//     } 
+ 
+//    if(same) 
+//       score=30; 
+    
+//    return score; 
+// } 
+
+        
+        
+        
+        //storstright
+        
+        function placeResultLargeStraight() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            scoreBoardModel.largeStraight =
+                countsLargerThanOne.length > 0
+                    ? 0
+                    : (counts[0] === 0 ? 20 : 0);
+            resetDiceAndRefreshScoreboard();
+        }
+        //fullstright
+        function placeResultFullStright() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            scoreBoardModel.fullStraight =
+                countsLargerThanOne.length > 0
+                    ? 0
+                    : (counts[0] === 0 ? 21 : 0);
+            resetDiceAndRefreshScoreboard();
+        }
+        //hus
+        function placeResultHouse() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            countsLargerThanOne.sort();
+            var house = countsLargerThanOne[0] === 2 && countsLargerThanOne[1] === 3;
+            scoreBoardModel.house = house ? getSum() : 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        //hytte
+        function placeResultCabin() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            countsLargerThanOne.sort();
+            var cabin = countsLargerThanOne[0] === 3 && countsLargerThanOne[1] === 3;
+            scoreBoardModel.cabin = cabin ? getSum() : 0;
+            resetDiceAndRefreshScoreboard();
+        }
+
+        //tårn
+        function placeResultTower() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            countsLargerThanOne.sort();
+            var tower = countsLargerThanOne[0] === 2 && countsLargerThanOne[1] === 4;
+            scoreBoardModel.tower = tower ? getSum() : 0;
+            resetDiceAndRefreshScoreboard();
+        }
+
+        //kåk
+        function placeResultHomeHouse() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            countsLargerThanOne.sort();
+            var homeHouse = countsLargerThanOne[0] === 3 && countsLargerThanOne[1] === 4;
+            scoreBoardModel.homeHouse = homeHouse ? getSum() : 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        //slott
+        function placeResultCastle() {
+            var counts = getCounts();
+            var countsLargerThanOne = counts.filter(
+                function (number) { return number > 1; });
+            countsLargerThanOne.sort();
+            var castle = countsLargerThanOne[0] === 2 && countsLargerThanOne[1] === 5;
+            scoreBoardModel.castle = castle ? getSum() : 0;
+            resetDiceAndRefreshScoreboard();
+        }
+
+        //sjangse
+        function placeResultChance() {            
+            scoreBoardModel.chance = getSum();
+            resetDiceAndRefreshScoreboard();
+        }
+        //kemboyatsi
+        function placeResultKemboYatzy() {
+            if (diceModel.throwCount < 0
+                || scoreBoardModel.kemboYatzy != null)
+                return;
+                var counts = getCounts();
+            for (var i = 0; i < counts.length; i++) {
+                if (counts[i] >= 7) {
+                    scoreBoardModel.kemboYatzy= 150;
+                    resetDiceAndRefreshScoreboard();
+                    return;
+                }
+            }
+            scoreBoardModel.kemboYatzy = 0;
+            resetDiceAndRefreshScoreboard();
+        }
+        function getSum() {
+            var sum = 0;
+            for (var i = 0; i < diceModel.dice.length; i++) {
+                sum += diceModel.dice[i].value;
+            }
+            return sum;
+        }
+
+        function getCounts() {
+            var counts = [0, 0, 0, 0, 0, 0,];
+            for (var i = 0; i < diceModel.dice.length; i++) {
+                counts[diceModel.dice[i].value - 1]++;
+            }
+            return counts;
+        }
+
+        function countNumberOfValues() {
+            var counts = getCounts();
+            var numberOfValues = 0;
+            for (var i = 0; i < counts.length; i++) {
+                if (counts[i] > 0) numberOfValues++;
+            }
+            return numberOfValues;
+        }
+        function initScoreBoard() {
+            var scoreBoard = {
+                getSum: function () {
+                    var sum = 0;
+                    for (var i = 1; i <= 6; i++)
+                        sum += this.upperSection[i];
+                    return sum;
+                },
+                getBonus: function () { return this.getSum() >= 105 ? 50 : 0; },
+                getTotalSum: function () {
+                    return this.getSum() +
+                        this.getBonus() + this.onePair + this.twoPairs + this.threePairs +
+                        this.threeOfAKind + this.fourOfAKind + this.fiveOfAKind + this.sixOfAKind + 
+                        this.smallStraight + this.largeStraight + this.fullStraight + this.house + 
+                        this.cabin + this.tower + this.homeHouse + this.castle  + this.chance + this.kemboYatzy;
+                }
+            }
+
+            scoreBoard.upperSection = [null, null, null, null, null, null, null];
+            scoreBoard.onePair = null;
+            scoreBoard.twoPairs = null;
+            scoreBoard.threePairs = null;
+            scoreBoard.threeOfAKind = null;
+            scoreBoard.fourOfAKind = null;
+            scoreBoard.fiveOfAKind = null;
+            scoreBoard.sixOfAKind = null;
+            scoreBoard.smallStraight = null;
+            scoreBoard.largeStraight = null;
+            scoreBoard.fullStraight = null;
+            scoreBoard.house = null;
+            scoreBoard.cabin = null;
+            scoreBoard.tower = null;
+            scoreBoard.homeHouse = null;
+            scoreBoard.castle = null;
+            scoreBoard.chance = null;
+            scoreBoard.kemboYatzy = null;
+            return scoreBoard;
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-family: cursive;
+            overflow: scroll;
+            width: 150px;
+            height: 200px;
+
+        }
+        div1{
+            font-family: monospace;
+            font-display: flex;
+        }
+        p{
+            font-family: helvetica;
+            text-decoration: blue underline;
+        }
+    </style>
+</head>
+<body>
+<h1>OVERSKRIFT</h1>
+<div1><strong>heihei</strong> hvordan har du det</div1>
+<div><del>skjer a?</del>heihei hsafjkndkasf dsjasdjflasjdnjks <br> ajdfhjakfnjkafnjkan</div>
+<div><b><mark>bolle</mark>heihei kjfdsdngjksdjkgllk  dljfndsjfjdsk</b></div>
+
+<p id="test" onclick="lala()" onmouseover="balla()"> henning lærer </p>
+<tt id="hade">heiheihei</tt>
+<tt>heiheihei</tt>
+
+
+<p>heihei2</p>
+<p>heihei2</p>
+<p>heihei2</p>
+
+
+   <script>
+       var prøvelse = document.getElementById('test');
+       var testingonetwo = document.getElementById('hade');
+       function lala(){
+    // document.getElementById('test').innerHTML = 'hei'; er det samme som på neste linje og variabelen
+    prøvelse.innerHTML = 'hei';
+    console.log(prøvelse, 'hva er dette?')
+}
+
+function balla() {
+    testingonetwo.innerHTML = 'hva skjer nå?';
+}
+   </script>
+</body>
+</html>
